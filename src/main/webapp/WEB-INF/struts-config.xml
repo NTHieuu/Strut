@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+        <form-bean name = "userForm" type = "com.strut.strutstut.form.UserForm"/>
+    </form-beans>
+
+    <action-mappings>
+        <action path="/add-user" type="com.strut.strutstut.action.UserAction" name="userForm" parameter="addUser">
+            <forward name="addUser" path="/addUser.jsp"/>
+        </action>
+        <action path="/user1" type="com.strut.strutstut.action.UserAction" name="userForm" parameter="create">
+            <forward name="user1" path="/listUser.jsp"/>
+        </action>
+        <action path="/list-user" type="com.strut.strutstut.action.UserAction" name="userForm" parameter="viewUser">
+            <forward name="listUsers" path="/listUser.jsp"/>
+        </action>
+        <action path="/delete" type="com.strut.strutstut.action.UserAction" name="userForm" parameter="deteteUser">
+            <forward name="delete" path="/listUser.jsp"/>
+        </action>
+    </action-mappings>
+
+    <message-resources parameter="message"/>
+
+
+</struts-config>
